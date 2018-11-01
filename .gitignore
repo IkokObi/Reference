@@ -3,3 +3,17 @@ Ising_MCMC/
 Jupyter/
 M1TrainingCourse/
 
+
+.DS_Store
+
+
+# Python
+.python-version
+__pycache__
+.ipynb_*
+.jupyterlog
+
+
+# vim
+*.swp
+
