@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 Created on : 2018/11/02 07:30:39 JST.
-Last Change: 2018/11/02 11:36:04 JST.
+Last Change: 2018/11/02 12:40:50 JST.
 
 @author: Koki Obinata
 """
@@ -30,9 +30,10 @@ def line_graph(x_data, y_data, linewidth=2, color='green', marker='o'):
     fig = plt.figure()
     ax = fig.add_subplot(111)
     ax.plot(x_data, y_data, color=color, marker=marker, linewidth=linewidth,
-            linestyle='solid')
+            linestyle='solid', label='Line')
     ax.set_title('Line Plot')  # タイトルを追加
     ax.set_ylabel('Y Value')  # y軸にラベルを追加
+    plt.legend(loc='upper left')
     plt.show()
 
 
