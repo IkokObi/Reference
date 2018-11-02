@@ -2,20 +2,13 @@
 # -*- coding: utf-8 -*-
 """
 Created on : 2018/11/02 07:58:42 JST.
-Last Change: 2018/11/02 10:53:51 JST.
+Last Change: 2018/11/02 11:18:50 JST.
 
 @author: Koki Obinata
 """
 from collections import Counter
 import matplotlib.pyplot as plt
 import numpy as np
-
-
-n_students = 20
-grades = np.random.randint(low=0, high=101, size=n_students)
-decile = lambda grade: (grade // 10) * 10  # //は割り算の商を返す
-temp = [decile(grade) for grade in grades]
-grades_counter = Counter(temp)
 
 
 def histogram(counter_data):
@@ -33,5 +26,20 @@ def histogram(counter_data):
     plt.show()
 
 
+def decile(data):
+    """
+    十分位変換
+
+    Parameters
+    ----------
+    data : ndarray, shape = [n_data]
+    """
+    return (data // 10) * 10
+
+
 if __name__ == '__main__':
-    histogram(counter_data=grades_counter)
+    N_STUDENTS = 20
+    GRADES = np.random.randint(low=0, high=101, size=N_STUDENTS)
+    GRADES_COUNTER = Counter(decile(GRADES))
+
+    histogram(counter_data=GRADES_COUNTER)

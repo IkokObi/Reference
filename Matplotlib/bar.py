@@ -2,17 +2,13 @@
 # -*- coding: utf-8 -*-
 """
 Created on : 2018/11/02 07:50:47 JST.
-Last Change: 2018/11/02 10:54:36 JST.
+Last Change: 2018/11/02 11:20:06 JST.
 
 @author: Koki Obinata
 """
 
 import matplotlib.pyplot as plt
 import numpy as np
-
-n_category = 5
-category = ['Book %d' % i for i in range(1, n_category+1)]
-reviews = np.random.randint(low=1, high=11, size=n_category)
 
 
 def bar_graph(data, labels):
@@ -32,4 +28,8 @@ def bar_graph(data, labels):
 
 
 if __name__ == '__main__':
-    bar_graph(data=reviews, labels=category)
+    N_CATEGORY = 5
+    CATEGORY = ['Book %d' % i for i in range(1, N_CATEGORY+1)]
+    REVIEWS = np.random.randint(low=1, high=11, size=N_CATEGORY)
+
+    bar_graph(data=REVIEWS, labels=CATEGORY)

@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 Created on : 2018/11/02 07:30:39 JST.
-Last Change: 2018/11/02 10:52:38 JST.
+Last Change: 2018/11/02 11:36:04 JST.
 
 @author: Koki Obinata
 """
@@ -10,35 +10,35 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 
-def func(x):
+def func(x_arr):
     """
     generate data for plot
 
     Parameters
     ----------
-    x : ndarray
+    x_arr : ndarray
 
     Return
     ------
     f(x) = x^3 + 1 + epsilon_noise
     """
-    return x ** 3 + 1 + np.random.randn(len(x))
+    return x_arr ** 3 + 1 + np.random.randn(len(x_arr))
 
 
-n_data = 10
-x_data = np.arange(n_data)
-y_data = func(x_data)
-
-
-def line_graph(x, y, linewidth=2, c='green', marker='o'):
+def line_graph(x_data, y_data, linewidth=2, color='green', marker='o'):
     """ plot line """
     fig = plt.figure()
     ax = fig.add_subplot(111)
-    ax.plot(x, y, color=c, marker=marker, linewidth=linewidth, linestyle='solid')
+    ax.plot(x_data, y_data, color=color, marker=marker, linewidth=linewidth,
+            linestyle='solid')
     ax.set_title('Line Plot')  # タイトルを追加
     ax.set_ylabel('Y Value')  # y軸にラベルを追加
     plt.show()
 
 
 if __name__ == '__main__':
-    line_graph(x=x_data, y=y_data)
+    N = 10
+    X_DATA = np.arange(N)
+    Y_DATA = func(X_DATA)
+
+    line_graph(x_data=X_DATA, y_data=Y_DATA)
