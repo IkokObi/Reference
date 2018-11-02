@@ -22,6 +22,5 @@ __pycache__
 # TeX
 TeX/*
 !TeX/*.tex
-!TeX/*.pdf
 TeX/Week_Report.*
 
