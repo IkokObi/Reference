@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 Created on : 2018/11/02 07:58:42 JST.
-Last Change: 2018/11/02 10:13:25 JST.
+Last Change: 2018/11/02 10:53:51 JST.
 
 @author: Koki Obinata
 """
@@ -11,10 +11,10 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 
-NUM = 20
-GRADES = np.random.randint(low=0, high=101, size=NUM)
+n_students = 20
+grades = np.random.randint(low=0, high=101, size=n_students)
 decile = lambda grade: (grade // 10) * 10  # //は割り算の商を返す
-temp = [decile(grade) for grade in GRADES]
+temp = [decile(grade) for grade in grades]
 grades_counter = Counter(temp)
 
 
