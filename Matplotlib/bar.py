@@ -2,15 +2,17 @@
 # -*- coding: utf-8 -*-
 """
 Created on : 2018/11/02 07:50:47 JST.
-Last Change: 2018/11/02 08:09:59 JST.
+Last Change: 2018/11/02 10:08:02 JST.
 
 @author: Koki Obinata
 """
 
 import matplotlib.pyplot as plt
+import numpy as np
 
-MOVIES = ['Annie Hall', 'Ben-Hur', 'Casablanca', 'Gandhi', 'West Side Story']
-NUM_OSCARS = [5, 11, 3, 8, 10]
+NUM = 5
+CATEGORY = ['Book %d' % i for i in range(1, NUM+1)]
+REVIEWS = np.random.randint(low=1, high=11, size=NUM)
 
 
 def bar_graph(data, labels):
@@ -20,8 +22,9 @@ def bar_graph(data, labels):
     fig = plt.figure()
     ax = fig.add_subplot(111)
     ax.bar(xticks, data)  # 棒グラフを作る
-    ax.set_ylabel('# of Academy Awards')
-    ax.set_title('My Favorite Movies')
+    ax.set_ylabel('Review (10 rank)')
+    ax.set_ylim([0, 10.5])
+    ax.set_title('Book Reviews')
     ax.set_xticks(xticks)
     ax.set_xticklabels(labels)
     # x軸のラベルに映画名を配置
@@ -29,4 +32,4 @@ def bar_graph(data, labels):
 
 
 if __name__ == '__main__':
-    bar_graph(data=NUM_OSCARS, labels=MOVIES)
+    bar_graph(data=REVIEWS, labels=CATEGORY)

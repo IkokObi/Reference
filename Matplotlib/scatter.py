@@ -2,17 +2,35 @@
 # -*- coding: utf-8 -*-
 """
 Created on : 2018/10/29 16:46:26 JST.
-Last Change: 2018/11/02 08:09:15 JST.
+Last Change: 2018/11/02 10:00:28 JST.
 
 @author: Koki Obinata
 """
 
 import matplotlib.pyplot as plt
+import numpy as np
 
 
-FRIENDS = [70, 65, 72, 63, 71, 64, 60, 64, 67]
-MINUTES = [175, 170, 205, 120, 220, 130, 105, 145, 190]
-LABELS = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i']
+def func(x):
+    """
+    generate data for plot 
+
+    Parameters
+    ----------
+    x : ndarray
+
+    Return
+    ------
+    f(x) = 2 * x + 1 + epsilon_noise
+    """
+    return 2 * x + 1 + np.random.randn(len(x))
+
+
+ALPHABET = 'abcdefghijklmnopqrstuvwxyz'
+DATANUM = 10
+X_DATA = np.arange(DATANUM)
+Y_DATA = func(X_DATA)
+LABELS = list(ALPHABET[:DATANUM])
 
 
 def scatter_graph(x, y, labels):
@@ -27,11 +45,11 @@ def scatter_graph(x, y, labels):
                     xytext=(5, -5),
                     textcoords='offset points')
         # 文字の位置(xytext)を矢印の先からの相対距離(offset points)で指定
-    ax.set_xlabel('# of friends')
-    ax.set_ylabel('daily minutes spent on the site')
-    ax.set_title('Daily Minutes vs. Number of Friends')
+    ax.set_xlabel('X Value')
+    ax.set_ylabel('Y Value')
+    ax.set_title('Scatter Plot with point labels')
     plt.show()
 
 
 if __name__ == '__main__':
-    scatter_graph(x=FRIENDS, y=MINUTES, labels=LABELS)
+    scatter_graph(x=X_DATA, y=y_data, labels=LABELS)
