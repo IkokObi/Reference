@@ -18,3 +18,9 @@ __pycache__
 # vim
 *.swp
 
+
+# TeX
+TeX/*
+!TeX/*.tex
+!TeX/*.pdf
+
