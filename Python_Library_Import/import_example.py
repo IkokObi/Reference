@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 Created on : 2018/10/30 14:16:12 JST.
-Last Change: 2018/11/02 04:54:34 JST. 
+Last Change: 2018/11/03 23:30:52 JST.
 
 Description:
     pythonのライブラリimport関係の確認
