@@ -1,0 +1,29 @@
+\documentclass[10pt]{jsarticle}
+\usepackage{amsmath,amssymb}
+\usepackage{bm}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{here}
+\usepackage[top=15truemm,bottom=20truemm,left=20truemm,right=20truemm]{geometry}
+\usepackage{ascmac}
+\usepackage{fancybox}
+\usepackage{comment}
+\usepackage{listings,jlisting}
+\def\disstyle{\displaystyle}
+\def\qed{\hfill （証明終わり）}
+
+\begin{document}
+	\title{Code Sample}
+	\author{Obinata}
+	\date{}	
+	\maketitle
+	
+
+	プログラミングコードの書き方例
+	\begin{lstlisting}[basicstyle=\ttfamily, frame=single,numbers=left]
+import numpy as np
+
+a = np.arange(5)
+print(a.sum())
+	\end{lstlisting}
+	
+\end{document}

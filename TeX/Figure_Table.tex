@@ -1,0 +1,70 @@
+\documentclass[11pt]{jarticle}
+\usepackage[top=1truemm, bottom=13truemm, right=10truemm, left=10truemm]{geometry}
+\usepackage{wrapfig}
+\usepackage{url}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{comment}
+\usepackage{amsmath,amssymb}
+\usepackage{bm}
+\usepackage{here}
+%\usepackage{color}
+\usepackage{ascmac}
+\usepackage{fancybox}
+\usepackage{listings,jlisting}
+\def\disstyle{\displaystyle}
+
+\begin{document}
+\title{Figureのサンプル}
+\author{Obinata}
+\date{}
+\maketitle
+
+図\ref{1}
+\begin{figure}[htbp]
+	\begin{center}
+		\begin{minipage}{0.48\hsize}
+			\begin{center}
+				\includegraphics[width=1.0 \textwidth]{figure1.png}
+			\end{center}
+			\begin{center}
+				fig. 1
+			\end{center}
+		\end{minipage}		
+		\hfil
+		\begin{minipage}{0.48\hsize}
+			\begin{center}
+				\includegraphics[width=1.0 \textwidth]{figure1.png}
+			\end{center}
+			\begin{center}
+				fig. 2 
+			\end{center}
+		\end{minipage}
+		\caption{Hoge}
+		\label{1}
+	\end{center}
+\end{figure}
+
+図\ref{2}
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=0.6 \textwidth]{figure1.png}
+		\vspace{-0.5cm}
+		\caption{Foo}
+		\label{2}
+	\end{center}
+\end{figure}
+
+表\ref{3}
+\begin{table}[htbp]
+	\centering
+	\caption{Bar}
+	\label{3}
+	\begin{tabular}{|c|c|} \hline
+			\multicolumn{2}{|c|}{hogehoge}\\ \hline
+		spam & spamspam \\ \hline
+		ham & hamham \\ \hline
+		egg & eggegg \\ \hline
+	\end{tabular}
+\end{table}
+
+\end{document}
