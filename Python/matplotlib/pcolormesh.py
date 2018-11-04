@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 Created on : 2018/11/04 04:46:18 JST.
-Last Change: 2018/11/04 05:17:16 JST.
+Last Change: 2018/11/04 11:40:01 JST.
 
 @author: Koki Obinata
 """
@@ -11,15 +11,32 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 
-def pcolormesh(x_grid, y_grid, data):
+EPSILON = 10**(-8)
+
+
+def pcolormesh(x_grid, y_grid, data, vmin, vmax,
+               tickstep=0.5):
     """ plot 2D histogram """
     fig = plt.figure()
     ax = fig.add_subplot(111)
 
-    quadmesh = ax.pcolormesh(x_grid, y_grid, data)
+    quadmesh = ax.pcolormesh(x_grid, y_grid, data,
+                             vmin=vmin, vmax=vmax)
     cbar = fig.colorbar(quadmesh, ax=ax)
     cbar.set_label('Color Bar')
-    print(cbar)
+
+    xticks = np.arange(x_grid[0, 0],
+                       x_grid[0, -1]//tickstep * tickstep + EPSILON,
+                       tickstep)
+    ax.set_xticks(xticks)
+    yticks = np.arange(y_grid[0, 0],
+                       y_grid[-1, 0]//tickstep * tickstep + EPSILON,
+                       tickstep)
+    ax.set_yticks(yticks)
+
+    cticks = np.arange(vmin, vmax + EPSILON, tickstep)
+    cbar.set_ticks(cticks)
+
     plt.show()
 
 
@@ -30,4 +47,4 @@ if __name__ == '__main__':
     print('Y shape:', Y.shape)
 
     DATA = np.sin(2*np.pi*X) * (Y+1) * (3-Y)
-    pcolormesh(x_grid=X, y_grid=Y, data=DATA)
+    pcolormesh(x_grid=X, y_grid=Y, data=DATA, vmin=-4, vmax=4)
