@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 Created on : 2018/11/02 07:50:47 JST.
-Last Change: 2018/11/02 12:39:46 JST.
+Last Change: 2018/11/06 21:01:30 JST.
 
 @author: Koki Obinata
 """
@@ -17,19 +17,23 @@ def bar_graph(data, labels, color='red'):
 
     fig = plt.figure()
     ax = fig.add_subplot(111)
-    ax.bar(xticks, data, color=color)  # 棒グラフを作る
-    ax.set_ylabel('Review (10 rank)')
+
+    ax.bar(xticks, data, color=color)  # 棒グラフ作成
+
+    ax.set_ylabel('Review (10 rank)')  # y軸の設定
     ax.set_ylim([0, 10.5])
-    ax.set_title('Book Reviews')
-    ax.set_xticks(xticks)
-    ax.set_xticklabels(labels)
-    # x軸のラベルに映画名を配置
+
+    ax.set_title('Book Reviews')  # タイトルの追加
+
+    ax.set_xticks(xticks)  # x軸の設定
+    ax.set_xticklabels(labels)  # x軸のラベルに映画名を配置
+
     plt.show()
 
 
 if __name__ == '__main__':
-    N_CATEGORY = 5
-    CATEGORY = ['Book %d' % i for i in range(1, N_CATEGORY+1)]
-    REVIEWS = np.random.randint(low=1, high=11, size=N_CATEGORY)
+    n_category = 5
+    category = ['Book %d' % i for i in range(1, n_category+1)]
+    reviews = np.random.randint(low=1, high=11, size=n_category)
 
-    bar_graph(data=REVIEWS, labels=CATEGORY)
+    bar_graph(data=reviews, labels=category)

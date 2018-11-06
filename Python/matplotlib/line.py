@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 Created on : 2018/11/02 07:30:39 JST.
-Last Change: 2018/11/02 12:40:50 JST.
+Last Change: 2018/11/06 21:01:16 JST.
 
 @author: Koki Obinata
 """
@@ -29,17 +29,20 @@ def line_graph(x_data, y_data, linewidth=2, color='green', marker='o'):
     """ plot line """
     fig = plt.figure()
     ax = fig.add_subplot(111)
+
     ax.plot(x_data, y_data, color=color, marker=marker, linewidth=linewidth,
-            linestyle='solid', label='Line')
+            linestyle='solid', label='Line')  # 折れ線グラフ作成
+
     ax.set_title('Line Plot')  # タイトルを追加
-    ax.set_ylabel('Y Value')  # y軸にラベルを追加
-    plt.legend(loc='upper left')
+    ax.set_ylabel('Y Value')  # y軸の設定
+    plt.legend(loc='upper left')  # 凡例の設定
+
     plt.show()
 
 
 if __name__ == '__main__':
-    N = 10
-    X_DATA = np.arange(N)
-    Y_DATA = func(X_DATA)
+    n_data = 10
+    x_data = np.arange(n_data)
+    y_data = func(x_data)
 
-    line_graph(x_data=X_DATA, y_data=Y_DATA)
+    line_graph(x_data=x_data, y_data=y_data)
