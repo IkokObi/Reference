@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 Created on : 2018/11/04 03:50:28 JST.
-Last Change: 2018/11/06 20:50:12 JST.
+Last Change: 2018/11/09 19:42:38 JST.
 
 @author: Koki Obinata
 """
@@ -11,7 +11,7 @@ from pathlib import Path
 import numpy as np
 
 
-current = Path()
+current = Path('.')
 data_dir = current / 'Data'
 document_a = data_dir / 'a.txt'
 document_b = data_dir / 'b.txt'
@@ -24,13 +24,13 @@ print('Current Path:', current.cwd())
 
 """ ファイル/フォルダの一覧 """
 print('\nFiles and Folders')
-for path in Path('./Data/').iterdir():
+for path in data_dir.iterdir():
     print('--', path)
 
 
 """ リストとして取得 """
 print('\nGet file list')
-list_data = list(Path('./Data/').glob('*.txt'))
+list_data = list(data_dir.glob('*.csv'))
 print('Data/*.txt', list_data)
 
 
