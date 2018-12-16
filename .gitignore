@@ -23,5 +23,6 @@ Python/pandas/*.pdf
 # TeX
 TeX/*
 !TeX/*.tex
+!TeX/*.pdf
 TeX/Week_Report.*
 
