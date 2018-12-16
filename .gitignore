@@ -13,6 +13,7 @@ Practice/*
 __pycache__
 .ipynb_*
 .jupyterlog
+Python/pandas/*.pdf
 
 
 # vim
