@@ -1,9 +1,11 @@
 {
-  "a": 10,
+  "a": 5,
   "b": 20,
+  "bool": false,
   "c": "spam",
   "d": [
     "ham",
     "egg"
-  ]
+  ],
+  "en": true
 }
