@@ -2,11 +2,12 @@
 # -*- coding: utf-8 -*-
 """
 Created on : 2018/11/09 21:20:16 JST.
-Last Change: 2018/11/27 15:42:56 JST.
+Last Change: 2018/12/22 14:12:09 JST.
 
 @author: Koki Obinata
 """
 import argparse
+from distutils.util import strtobool
 import json
 
 
@@ -27,6 +28,10 @@ if __name__ == '__main__':
                         help='string parmeter c')
     parser.add_argument('--d', type=list, default=D_DEFAULT,
                         help='string list d')
+    parser.add_argument('--en', action='store_false',
+                        help='bool flag')
+    parser.add_argument('--bool', type=strtobool, default=False,
+                        help='bool flag')
 
     args = parser.parse_args()
 
