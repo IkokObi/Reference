@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 Created on : 2018/11/29 14:30:09 JST.
-Last Change: 2018/12/03 02:08:44 JST.
+Last Change: 2018/12/22 16:51:41 JST.
 
 @author: Koki Obinata
 """
@@ -14,8 +14,8 @@ from sklearn.metrics import confusion_matrix
 
 
 def print_cmx(y_true, y_pred, labels, name_labels, name):
-    """ 混合行列のプロット """
-    # 混合行列を作成, c_ij は真のグループが i で予測グループが j の数を表す
+    """ 混同行列のプロット """
+    # 混同行列を作成, c_ij は真のグループが i で予測グループが j の数を表す
     cmx_data = confusion_matrix(y_true, y_pred, labels=labels)
 
     # プロット用のpd.DataFrame型
