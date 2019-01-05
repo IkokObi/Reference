@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 Created on : 2018/11/09 21:20:16 JST.
-Last Change: 2019/01/04 19:41:21 JST.
+Last Change: 2019/01/05 21:51:56 JST.
 
 @author: Koki Obinata
 """
@@ -15,7 +15,7 @@ A_DEFAULT = 10
 B_DEFAULT = 20
 C_DEFAULT = 'spam'
 D_DEFAULT = ['ham', 'egg']
-OPTION_SAVE_PATH = 'options.txt'
+OPTION_SAVE_PATH = 'options.json'
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
