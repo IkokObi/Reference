@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 Created on : 2018/11/09 21:20:16 JST.
-Last Change: 2019/01/21 11:51:01 JST.
+Last Change: 2019/07/05 22:46:18 JST.
 
 @author: Koki Obinata
 """
@@ -11,30 +11,27 @@ from distutils.util import strtobool
 import json
 
 
-A_DEFAULT = 10
-B_DEFAULT = 20
-C_DEFAULT = 'spam'
-D_DEFAULT = ['ham', 'egg']
-OPTION_SAVE_PATH = 'options.json'
-
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
 
-    parser.add_argument('--a', type=int, default=A_DEFAULT,
-                        help='integer parameter a')
-    parser.add_argument('--b', type=float, default=B_DEFAULT,
-                        help='float parameter b')
-    parser.add_argument('--c', type=str, default=C_DEFAULT,
-                        help='string parmeter c')
-    parser.add_argument('--d', type=list, default=D_DEFAULT,
-                        help='string list d')
-    parser.add_argument('--en', action='store_false',
-                        help='bool flag (default True)')
-    parser.add_argument('--bool', type=strtobool, default=False,
-                        help='bool flag')
+    parser.add_argument('--epoch', type=int, default=10,
+                        help='number of epochs')
+    parser.add_argument('--lr', type=float, default=0.1,
+                        help='learning rate')
+    parser.add_argument('-f', '--filename', type=str, default='./temp.csv',
+                        help='path to the data file')
+    parser.add_argument('--check_list', type=list, default=['a', 'b'],
+                        help='check file list')
+    parser.add_argument('--make_false', action='store_false',
+                        help='make some option False (default True)')
+    parser.add_argument('--ja', action='store_true',
+                        help='enable Japanese (default False)')
+    parser.add_argument('--verbose', type=strtobool, default=False,
+                        help='convert bool strings to 1(True) or 0(False)')
 
     args = parser.parse_args()
 
+    OPTION_SAVE_PATH = 'options.json'
     # use json.dump for file writing
     with open(OPTION_SAVE_PATH, mode='w') as f:
         json.dump(obj=vars(args), fp=f,
