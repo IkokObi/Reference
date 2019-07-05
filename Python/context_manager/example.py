@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 Created on : 2019/03/07 14:21:04 JST.
-Last Change: 2019/03/07 15:00:59 JST.
+Last Change: 2019/07/05 22:52:10 JST.
 
 
 時間計測を簡単に行うことが出来る
@@ -48,7 +48,7 @@ def timer_for_each():
 
     Usage
     -----
-    with sum_timer() as timer:
+    with timer_for_each() as timer:
         for _ in range(10):
             with timer('process1'):
                 time.sleep(0.1)
@@ -79,14 +79,14 @@ def timer_for_each():
 
 
 @contextmanager
-def timer_with_total(total_label):
+def timer_for_total(total_label):
     """
     forループの中などで，処理ごとに別々に時間を計測し，
     最後に全体の処理時間を表示
 
     Usage
     -----
-    with total_timer('Total time') as timer:
+    with timer_for_total('Total time') as timer:
         for _ in range(10):
 
             with timer('process1'):
@@ -142,7 +142,7 @@ if __name__ == '__main__':
                 time.sleep(0.2)
 
     # 各処理 + 全体の処理時間
-    with timer_with_total('全体') as timer:
+    with timer_for_total('全体') as timer:
         for _ in range(10):
             with timer('処理1'):
                 time.sleep(0.1)
