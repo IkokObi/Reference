@@ -16,16 +16,17 @@ def histogram(counter_data):
     fig = plt.figure()
     ax = fig.add_subplot(111)
 
-    ax.bar([x for x in counter_data.keys()],
-           counter_data.values(), 8)  # ヒストグラム作成, 棒の幅を8にする
+    ax.bar(
+        [x for x in counter_data.keys()], counter_data.values(), 8
+    )  # ヒストグラム作成, 棒の幅を8にする
     ax.set_xlim([-5, 105])  # x軸の設定
-    ax.set_xlabel('Declie')
+    ax.set_xlabel("Declie")
     ax.set_xticks([10 * i for i in range(11)])  # x軸のラベル0, 10, ..., 100
 
     ax.set_ylim([0, 10])  # y軸の設定
-    ax.set_ylabel('# of Students')
+    ax.set_ylabel("# of Students")
 
-    ax.set_title('Score Distribution of Exam 1')  # タイトルの追加
+    ax.set_title("Score Distribution of Exam 1")  # タイトルの追加
 
     plt.show()
 
@@ -41,7 +42,7 @@ def decile(data):
     return (data // 10) * 10
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     n_students = 20
     grades = np.random.randint(low=0, high=101, size=n_students)
     grades_counter = Counter(decile(grades))

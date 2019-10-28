@@ -27,6 +27,6 @@ ax = fig.add_subplot(1, 1, 1)
 ax.set_ylim([-0.5, len(fonts)])
 
 for i, f in enumerate(fonts):
-    ax.text(0.2, i,  '日本語 {}'.format(f), fontdict={'family': f, 'fontsize': 16})
+    ax.text(0.2, i, "日本語 {}".format(f), fontdict={"family": f, "fontsize": 16})
 
-plt.savefig('output/all_fonts')
+plt.savefig("output/all_fonts")

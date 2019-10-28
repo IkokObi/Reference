@@ -25,22 +25,29 @@ def func(x_arr):
     return x_arr ** 3 + 1 + np.random.randn(len(x_arr))
 
 
-def line_graph(x_data, y_data, linewidth=2, color='green', marker='o'):
+def line_graph(x_data, y_data, linewidth=2, color="green", marker="o"):
     """ plot line """
     fig = plt.figure()
     ax = fig.add_subplot(111)
 
-    ax.plot(x_data, y_data, color=color, marker=marker, linewidth=linewidth,
-            linestyle='solid', label='Line')  # 折れ線グラフ作成
+    ax.plot(
+        x_data,
+        y_data,
+        color=color,
+        marker=marker,
+        linewidth=linewidth,
+        linestyle="solid",
+        label="Line",
+    )  # 折れ線グラフ作成
 
-    ax.set_title('Line Plot')  # タイトルを追加
-    ax.set_ylabel('Y Value')  # y軸の設定
-    plt.legend(loc='upper left')  # 凡例の設定
+    ax.set_title("Line Plot")  # タイトルを追加
+    ax.set_ylabel("Y Value")  # y軸の設定
+    plt.legend(loc="upper left")  # 凡例の設定
 
     plt.show()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     n_data = 10
     x_data = np.arange(n_data)
     y_data = func(x_data)
