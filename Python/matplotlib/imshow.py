@@ -12,7 +12,15 @@ import matplotlib.pyplot as plt
 
 # sphinx_gallery_thumbnail_number = 2
 
-vegetables = ["cucumber", "tomato", "lettuce", "asparagus", "potato", "wheat", "barley"]
+vegetables = [
+    "cucumber",
+    "tomato",
+    "lettuce",
+    "asparagus",
+    "potato",
+    "wheat",
+    "barley",
+]
 farmers = [
     "Farmer Joe",
     "Upland Bros.",
@@ -52,7 +60,9 @@ plt.setp(ax.get_xticklabels(), rotation=45, ha="right", rotation_mode="anchor")
 # Loop over data dimensions and create text annotations.
 for i in range(len(vegetables)):
     for j in range(len(farmers)):
-        text = ax.text(j, i, harvest[i, j], ha="center", va="center", color="w")
+        text = ax.text(
+            j, i, harvest[i, j], ha="center", va="center", color="w"
+        )
 
 ax.set_title("Harvest of local farmers (in tons/year)")
 fig.tight_layout()

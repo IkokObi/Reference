@@ -19,7 +19,9 @@ def pcolormesh(x_grid, y_grid, data, vmin, vmax, tickstep=0.5):
     fig = plt.figure()
     ax = fig.add_subplot(111)
 
-    quadmesh = ax.pcolormesh(x_grid, y_grid, data, vmin=vmin, vmax=vmax)  # ヒートマップ作成
+    quadmesh = ax.pcolormesh(
+        x_grid, y_grid, data, vmin=vmin, vmax=vmax
+    )  # ヒートマップ作成
 
     cbar = fig.colorbar(quadmesh, ax=ax)  # カラーバー作成
     cbar.set_label("Color Bar")

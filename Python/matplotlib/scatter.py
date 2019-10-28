@@ -27,7 +27,14 @@ def func(x_arr):
 
 
 def scatter_graph(
-    x_data, y_data, labels, cmap, s=20, marker="o", labelfontsize=14, titlesize=18
+    x_data,
+    y_data,
+    labels,
+    cmap,
+    s=20,
+    marker="o",
+    labelfontsize=14,
+    titlesize=18,
 ):
     """ scatter plot """
     fig = plt.figure()
@@ -35,7 +42,9 @@ def scatter_graph(
 
     n_data = len(x_data)
     for i in range(n_data):  # データ点プロット
-        ax.scatter(x_data[i], y_data[i], s=s, marker=marker, c=cmap(i / n_data))
+        ax.scatter(
+            x_data[i], y_data[i], s=s, marker=marker, c=cmap(i / n_data)
+        )
 
     # 各点のラベルをプロット
     for label, friend_count, minute_count in zip(labels, x_data, y_data):
