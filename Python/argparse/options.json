@@ -3,10 +3,12 @@
     "a",
     "b"
   ],
-  "en": false,
+  "choice": "spam",
   "epoch": 10,
-  "filename": "./temp.csv",
+  "filepath": "./temp.csv",
   "ja": false,
   "lr": 0.1,
+  "make_false": true,
+  "name": null,
   "verbose": false
 }

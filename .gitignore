@@ -1,14 +1,3 @@
-Theoretical_Physics/
-Ising_MCMC/
-Jupyter/
-M1TrainingCourse/
-Practice/*
-
-
-.DS_Store
-tags
-
-
 # Python
 .python-version
 __pycache__
@@ -26,4 +15,8 @@ TeX/*
 !TeX/*.tex
 !TeX/*.pdf
 TeX/Week_Report.*
+Tex/bibliography.*
 
+
+# local files
+local/

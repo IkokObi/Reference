@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 Created on : 2019/10/28 13:57:04 JST.
-Last Change: 2019/10/28 14:58:07 JST.
+Last Change: 2019/11/06 12:21:44 JST.
 
 参考ページ
 https://qiita.com/yniji/items/3fac25c2ffa316990d0c

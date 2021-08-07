@@ -2,13 +2,13 @@
 # -*- coding: utf-8 -*-
 """
 Created on : 2018/10/30 14:17:36 JST.
-Last Change: 2019/01/30 00:51:09 JST.
+Last Change: 2020/01/26 15:37:52 JST.
 
 @author: Koki Obinata
 """
 
-import lib.hello as hello
-from lib.deep_lib.deep_hello import deep_hello
+from . import hello as hello
+from .deep_lib.deep_hello import deep_hello
 
 
 def call_hello():
